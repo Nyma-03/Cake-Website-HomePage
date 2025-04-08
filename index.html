@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Delight</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+          }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            position: relative;
+            flex: 0 0 100%;
+        }
+        .carousel img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .carousel-content {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .navbar-title {
+            font-family: 'Berkshire Swash', cursive;
+            display: flex;
+            gap: 15px;
+            padding: 10px 15px;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        
+    </style>
+</head>
+<body class="bg-gray-100">
+   
+   
+    <nav class="bg-transparent shadow-none p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-pink-600 navbar-title">Cake Delight</h1>
+        <ul class="flex gap-4">
+            <li><a href="#" class="text-lg text-black hover:text-gray-800 navbar-title hover:text-pink-600">Home</a></li>
+            <li><a href="#" class="text-lg text-black hover:text-gray-800 navbar-title hover:text-pink-600">Gallery</a></li>
+            <li><a href="#" class="text-lg text-black hover:text-gray-800 navbar-title hover:text-pink-600">Contact</a></li>
+            <li><a href="#" class="text-lg text-black hover:text-gray-800 navbar-title hover:text-pink-600">About</a></li>
+            <li><a href="#cake" class="text-lg text-black hover:text-gray-800 navbar-title hover:text-pink-600">Cakes</a></li>
+            <li><a href="#ice-cream" class="text-lg text-black hover:text-gray-800 navbar-title hover:text-pink-600">Ice-Cream</a></li>
+            <li><a href="#newarrivals" class="text-lg text-black hover:text-gray-800 navbar-title hover:text-pink-600">New Arrivals</a></li>  
+            <!-- <li><a href="#cake">Cake</a></li>
+            <li><a href="#icecream">Ice Cream</a></li>
+            <li><a href="#newarrivals">New Arrivals</a></li>    -->
+        </ul>
+    </nav>
+    
+  
+    <div class="flex flex-col-reverse md:flex-row p-6 gap-6">
+       
+        <div class="md:w-2/3">
+            <div class="carousel">
+                <div class="carousel-container" id="carouselItems">
+                    <div class="carousel-item">
+                        <img src="/pictures/new2.jpg" alt="Cake 1">
+                        <div class="carousel-content" id="content1">
+                            <h2 class="text-2xl font-bold">Vanilla Bliss</h2>
+                            <p class="text-lg">A classic taste of soft vanilla delight</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/pictures/new3.jpg" alt="Cake 2">
+                        <div class="carousel-content" id="content2">
+                            <h2 class="text-2xl font-bold">Strawberry Dream</h2>
+                            <p class="text-lg">Sweet and tangy strawberry perfection</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/pictures/new.jpg" alt="Cake 3">
+                        <div class="carousel-content" id="content3">
+                            <h2 class="text-2xl font-bold">Chocolate Heaven</h2>
+                            <p class="text-lg">Indulge in rich chocolatey goodness</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+                <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+
+       
+        <div class="md:w-1/3 bg-white p-6 shadow-md rounded-md">
+            <h2 class="text-2xl font-bold  text-black mb-4" style="font-family: 'Times New Roman', serif;">Welcome to Cake Delight!</h2>
+
+            <p class="text-gray-600 mb-2">Thank you for visiting Cake Delight, where every cake is baked with love and care! We’re thrilled to be part of your special moments and celebrations. Our team is dedicated to offering you a wide variety of cakes, made from the finest ingredients and designed to perfection. Whether you’re here for a birthday, wedding, or any other occasion, we promise to deliver delicious and beautifully crafted cakes that will leave a lasting impression. Explore our selection, and let us make your celebrations even sweeter!</p>
+            <ul class="list-disc pl-6">
+                <li class="text-md mb-2" style="color: #4F6D7A;">Freshly baked cakes made with love and the finest ingredients.</li>
+                <li class="text-md mb-2" style="color: #4F6D7A;">Custom designs available for any occasion.</li>
+                <li class="text-md mb-2" style="color: #4F6D7A;">Fast and reliable delivery to your doorstep.</li>
+            </ul>
+            
+            
+        </div>
+    </div>
+    
+   
+    <!-- <section class="bg-white p-6">
+        <h2 class="text-3xl font-bold text-center text-pink-600 mb-8">Our Cakes</h2>
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            <div class="card bg-white shadow-md p-4 text-center">
+                <img src="/pictures/blog-img2.png" alt="Chocolate Cake" class="mx-auto">
+                <h2 class="text-xl font-bold my-2">Chocolate Cake</h2>
+                <p class="text-gray-600">Delicious and rich chocolate cake.</p>
+            </div>
+            <div class="card bg-white shadow-md p-4 text-center">
+                <img src="/pictures/blog-img3.png" alt="Vanilla Cake" class="mx-auto">
+                <h2 class="text-xl font-bold my-2">Vanilla Cake</h2>
+                <p class="text-gray-600">Soft and fluffy vanilla cake.</p>
+            </div>
+            <div class="card bg-white shadow-md p-4 text-center">
+                <img src="/pictures/blog-img1.png" alt="Strawberry Cake" class="mx-auto">
+                <h2 class="text-xl font-bold my-2">Strawberry Cake</h2>
+                <p class="text-gray-600">Sweet and tangy strawberry cake.</p>
+            </div>
+        </div>
+        <div class="flex justify-end mt-4">
+            <a href="#" class="text-white bg-pink-600 px-4 py-2 rounded hover:bg-pink-700 transition-all">Explore Cakes →</a>
+        </div>
+    </section> -->
+
+    <section id="cake" class="bg-white p-6">
+        <h2 class="text-3xl font-bold text-center text-pink-600 mb-8">Our Cakes</h2>
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            <div class="card bg-white shadow-md p-4 text-center flex flex-col h-[420px]">
+                <img src="/pictures/blog-img2.png" alt="Chocolate Cake" class="max-h-80 w-auto mx-auto">
+                <h2 class="text-xl font-bold my-2">Chocolate Cake</h2>
+                <p class="text-gray-600">Delicious and rich chocolate cake.</p>
+            </div>
+            <div class="card bg-white shadow-md p-4 text-center flex flex-col h-[420px]">
+                <img src="/pictures/blog-img3.png" alt="Vanilla Cake" class="max-h-80 w-auto mx-auto">
+                <h2 class="text-xl font-bold my-2">Vanilla Cake</h2>
+                <p class="text-gray-600">Soft and fluffy vanilla cake.</p>
+            </div>
+            <div class="card bg-white shadow-md p-4 text-center flex flex-col h-[420px]">
+                <img src="/pictures/blog-img1.png" alt="Strawberry Cake" class="max-h-80 w-auto mx-auto">
+                <h2 class="text-xl font-bold my-2">Strawberry Cake</h2>
+                <p class="text-gray-600">Sweet and tangy strawberry cake.</p>
+            </div>
+        </div>
+        <div class="flex justify-end mt-4">
+            <a href="#" class="text-white bg-pink-600 px-4 py-2 rounded hover:bg-pink-700 transition-all">Explore Cakes →</a>
+        </div>
+    </section>
+    
+    
+    <!-- Ice Cream Section -->
+    <section id="ice-cream" class="bg-white p-6">
+        <h2 class="text-3xl font-bold text-center text-blue-500 mb-8">Our Ice Creams</h2>
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            <div class="card bg-white shadow-md p-4 text-center">
+                <img src="/1st page/pictures/icecream3.jfif"class="w-full h-80 object-cover rounded"  alt="Vanilla Ice Cream" class="mx-auto">
+                <h2 class="text-xl font-bold my-2">Vanilla Ice Cream</h2>
+                <p class="text-gray-600">Classic vanilla with a creamy twist.</p>
+            </div>
+            <div class="card bg-white shadow-md p-4 text-center">
+                <img src= "/1st page/pictures/icecream2.jfif" class="w-full h-80 object-cover rounded"  alt="Chocolate Ice Cream" class="mx-auto">
+                <h2 class="text-xl font-bold my-2">Chocolate Ice Cream</h2>
+                <p class="text-gray-600">Rich chocolate ice cream made with love.</p>
+            </div>
+            <div class="card bg-white shadow-md p-4 text-center">
+                <img src="/1st page/pictures/icecream1.jfif" class="w-full h-80 object-cover rounded" alt="Strawberry Ice Cream" class="mx-auto">
+                <h2 class="text-xl font-bold my-2">Strawberry Ice Cream</h2>
+                <p class="text-gray-600">Sweet strawberry delight that melts in your mouth.</p>
+            </div>
+        </div>
+        <div class="flex justify-end mt-4">
+            <a href="#" class="text-white bg-pink-600 px-4 py-2 rounded hover:bg-pink-700 transition-all">Explore Ice Creams →</a>
+        </div>
+    </section>
+    
+    <!-- New Arrival Section -->
+
+    
+  
+    <section id="newarrivals" class="bg-white p-6">
+        <h2 class="text-3xl font-bold text-center text-pink-600 mb-8">New Arrivals</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex flex-col justify-between p-6 bg-white shadow-md rounded-md h-[420px]">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Introducing Our Special Mango Cheesecake!</h3>
+                    <p class="text-gray-600 mb-2">We’ve been busy baking up something special just for you! Introducing our newest cake creations, packed with bold flavors and beautiful designs. From smooth, creamy frostings to fresh, zesty fruit fillings, each cake is a delicious masterpiece. Whether you’re planning a birthday party, a family gathering, or just want a slice of something sweet, our new arrivals will make any occasion unforgettable. Stop by and discover the magic of our freshly baked cakes today!
+                        Fresh, flavorful, and full of love – our new cake arrivals are here to bring a touch of sweetness to your day! From elegant chocolate cakes to refreshing fruit-based desserts, we’ve got something for every taste. Each of our new cakes is lovingly crafted with premium ingredients, perfect for celebrations or as an everyday indulgence. Come by and experience the joy of our newest flavors – we promise you won’t want to miss out!
+
+                    </p>
+                    <p class="text-gray-600">Order now and enjoy a slice of paradise delivered to your doorstep.</p>
+                </div>
+                <button class="mt-4 px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600 w-max">Explore</button>
+            </div>
+            <div class="h-[420px]">
+                <img src="/1st page/pictures/new4.jfif" class="w-full h-full object-cover rounded shadow-md" alt="Cake">
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-white p-6">
+        <h2 class="text-3xl font-bold text-center text-pink-600 mb-8">Latest Articles</h2>
+        
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+           
+            <div class="card bg-white shadow-md p-6">
+                <img src="/pictures/woman1.avif" alt="Cake Makers" class="w-full h-50 object-cover mb-4">
+                <h3 class="text-xl font-semibold text-pink-600 mb-2">Meet Our Expert Cake Makers</h3>
+                <p class="text-gray-600 mb-4">Discover the passion and skill behind our delicious cakes. Learn more about our expert cake makers who create each cake with love and perfection.</p>
+                <a href="#" class="text-pink-600 hover:text-pink-800">Read More →</a>
+            </div>
+            
+            
+            <div class="card bg-white shadow-md p-6">
+                <img src="/pictures/woman3.jpg" alt="Website Journey" class="w-full h-50 object-cover mb-4">
+                <h3 class="text-xl font-semibold text-pink-600 mb-2">Our Journey: Bringing Cake Delight to Life</h3>
+                <p class="text-gray-600 mb-4">Explore how Cake Delight started, our mission, and how we are revolutionizing the cake delivery industry. Join us on our delicious journey.</p>
+                <a href="#" class="text-pink-600 hover:text-pink-800">Read More →</a>
+            </div>
+            
+            
+            <div class="card bg-white shadow-md p-6">
+                <img src="/pictures/custome-cake1.jpg" alt="Cake Designs" class="w-full h-50 object-cover mb-4">
+                <h3 class="text-xl font-semibold text-pink-600 mb-2">Custom Cake Designs: Make Your Dream Cake a Reality</h3>
+                <p class="text-gray-600 mb-4">Want a personalized cake? Learn about our custom cake designs and how we work with you to bring your sweet ideas to life.</p>
+                <a href="#" class="text-pink-600 hover:text-pink-800">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-800 text-white p-8 mt-8">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+          
+            <div class="text-center md:text-left">
+                <h3 class="text-3xl font-bold text-pink-600 mb-2">Cake Delight</h3>
+                <p class="text-gray-400 max-w-xs mx-auto md:mx-0">Freshly baked cakes made with love and care. Indulge in our sweet creations delivered right to your doorstep.</p>
+            </div>
+            
+           
+             <div class="flex flex-col items-center md:items-start space-y-4">
+                <h4 class="text-lg font-semibold text-pink-600">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-pink-600">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-pink-600">Gallery</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-pink-600">Contact</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-pink-600">About Us</a></li>
+                </ul>
+            </div>
+            
+         
+            <div class="flex flex-col items-center md:items-start space-y-6">
+                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-pink-600">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-pink-600">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-pink-600">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-pink-600">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+        
+        
+    
+        <div class="text-center mt-6">
+            <p class="text-gray-400">&copy; 2025 Cake Delight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let index = 0;
+        function showSlide() {
+            const slides = document.getElementById("carouselItems");
+            const totalSlides = slides.children.length;
+            index = (index + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            
+         
+            document.querySelectorAll(".carousel-content").forEach(content => {
+                content.style.opacity = "0";
+                content.style.transform = "translateY(-20px)";
+            });
+            
+            setTimeout(() => {
+                document.getElementById(`content${index + 1}`).style.opacity = "1";
+                document.getElementById(`content${index + 1}`).style.transform = "translateY(0)";
+            }, 300);
+        }
+        function prevSlide() {
+            index--;
+            showSlide();
+        }
+        function nextSlide() {
+            index++;
+            showSlide();
+        }
+        showSlide();
+    </script>
+</body>
+</html>
